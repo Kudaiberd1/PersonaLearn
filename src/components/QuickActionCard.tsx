@@ -8,7 +8,7 @@ interface QuickActionCardProps {
 
 export default function QuickActionCard({ icon, title, description }: QuickActionCardProps) {
   return (
-    <button className="flex items-center gap-4 p-5 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 rounded-2xl hover:border-blue-500/50 hover:bg-white dark:hover:bg-slate-800 transition-all text-left group shadow-sm">
+    <button className="flex items-center gap-4 p-5 bg-white border border-slate-200/60 rounded-2xl hover:border-blue-500/50 hover:bg-white transition-all text-left group shadow-sm">
       <div className="size-12 rounded-xl bg-blue-500/5 text-blue-500 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
         <Icon name={icon} className="text-2xl" />
       </div>

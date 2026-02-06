@@ -6,24 +6,24 @@ export default function AnalyticsAdmin2() {
   const getGapColor = (severity: string) => {
     const colors: Record<string, { bg: string; border: string; text: string; bar: string; progress: string }> = {
       high: {
-        bg: 'bg-red-50 dark:bg-red-900/10',
-        border: 'border-red-100 dark:border-red-900/30',
-        text: 'text-red-700 dark:text-red-400',
-        bar: 'bg-red-200 dark:bg-red-900/30',
+        bg: 'bg-red-50',
+        border: 'border-red-100',
+        text: 'text-red-700',
+        bar: 'bg-red-200',
         progress: 'bg-red-500',
       },
       medium: {
-        bg: 'bg-orange-50 dark:bg-orange-900/10',
-        border: 'border-orange-100 dark:border-orange-900/30',
-        text: 'text-orange-700 dark:text-orange-400',
-        bar: 'bg-orange-200 dark:bg-orange-900/30',
+        bg: 'bg-orange-50',
+        border: 'border-orange-100',
+        text: 'text-orange-700',
+        bar: 'bg-orange-200',
         progress: 'bg-orange-500',
       },
       low: {
-        bg: 'bg-blue-50 dark:bg-blue-900/10',
-        border: 'border-blue-100 dark:border-blue-900/30',
-        text: 'text-blue-700 dark:text-blue-400',
-        bar: 'bg-blue-200 dark:bg-blue-900/30',
+        bg: 'bg-blue-50',
+        border: 'border-blue-100',
+        text: 'text-blue-700',
+        bar: 'bg-blue-200',
         progress: 'bg-blue-500',
       },
     };
@@ -32,10 +32,10 @@ export default function AnalyticsAdmin2() {
 
   const getAvatarColor = (color: string) => {
     const colors: Record<string, string> = {
-      blue: 'bg-blue-100 dark:bg-blue-900/30 text-blue-500',
-      purple: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600',
+      blue: 'bg-blue-100 text-blue-500',
+      purple: 'bg-purple-100 text-purple-600',
     };
-    return colors[color] || 'bg-gray-100 dark:bg-gray-700 text-gray-600';
+    return colors[color] || 'bg-gray-100 text-gray-600';
   };
 
   const getCompetencyColor = (level: number) => {
@@ -48,15 +48,15 @@ export default function AnalyticsAdmin2() {
     <PersonaLearnLayout title="Аналитика" showSearch>
       <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-black text-[#111418] dark:text-white tracking-tight">
+          <h2 className="text-3xl font-black text-[#111418] tracking-tight">
             Аналитика PersonaLearn
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-gray-500 mt-1">
             Детальные ИИ-инсайты по эффективности обучения сотрудников
           </p>
         </div>
         <div className="flex gap-3">
-          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 cursor-pointer">
+          <div className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 cursor-pointer">
             <Icon name="calendar_month" className="text-[18px]" />
             <span>01 Окт — 31 Окт</span>
           </div>
@@ -64,7 +64,7 @@ export default function AnalyticsAdmin2() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-        <div className="lg:col-span-2 bg-white dark:bg-[#1a2432] p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm relative overflow-hidden">
+        <div className="lg:col-span-2 bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative overflow-hidden">
           <div className="flex justify-between items-center mb-8">
             <div>
               <h3 className="text-lg font-bold">Карта компетенций (AI Radar)</h3>
@@ -75,7 +75,7 @@ export default function AnalyticsAdmin2() {
                 <span className="size-2.5 rounded-full bg-blue-500"></span> Факт
               </span>
               <span className="flex items-center gap-2 text-xs font-medium">
-                <span className="size-2.5 rounded-full bg-gray-200 dark:bg-gray-700"></span> Цель
+                <span className="size-2.5 rounded-full bg-gray-200"></span> Цель
               </span>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function AnalyticsAdmin2() {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-[#1a2432] p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
           <h3 className="text-lg font-bold mb-4">Пробелы в знаниях</h3>
           <div className="space-y-5">
             {analyticsData.knowledgeGaps.map((gap) => {
@@ -170,8 +170,8 @@ export default function AnalyticsAdmin2() {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#1a2432] rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
-        <div className="px-6 py-5 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between">
+      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <div className="px-6 py-5 border-b border-gray-200 flex items-center justify-between">
           <div>
             <h3 className="text-lg font-bold">Рейтинг сотрудников и AI-фидбек</h3>
             <p className="text-sm text-gray-500">Автоматический анализ диалогов за последнюю неделю</p>
@@ -182,7 +182,7 @@ export default function AnalyticsAdmin2() {
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left">
-            <thead className="bg-gray-50 dark:bg-gray-800/50">
+            <thead className="bg-gray-50">
               <tr className="text-[10px] font-black uppercase text-gray-500 tracking-wider">
                 <th className="px-6 py-4">Сотрудник</th>
                 <th className="px-6 py-4">Уровень компетенций</th>
@@ -191,11 +191,11 @@ export default function AnalyticsAdmin2() {
                 <th className="px-6 py-4"></th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+            <tbody className="divide-y divide-gray-100">
               {analyticsData.employees.map((employee) => {
                 const compColors = getCompetencyColor(employee.competencyLevel);
                 return (
-                  <tr key={employee.id} className="hover:bg-gray-50 dark:hover:bg-gray-800/40 transition-colors group">
+                  <tr key={employee.id} className="hover:bg-gray-50 transition-colors group">
                     <td className="px-6 py-5">
                       <div className="flex items-center gap-3">
                         <div className={`size-10 rounded-full ${getAvatarColor(employee.avatarColor)} flex items-center justify-center font-black text-sm`}>
@@ -209,27 +209,27 @@ export default function AnalyticsAdmin2() {
                     </td>
                     <td className="px-6 py-5">
                       <div className="flex items-center gap-3">
-                        <div className="flex-1 w-20 bg-gray-100 dark:bg-gray-700 h-1.5 rounded-full overflow-hidden">
+                        <div className="flex-1 w-20 bg-gray-100 h-1.5 rounded-full overflow-hidden">
                           <div className={`${compColors.bg} h-full`} style={{ width: `${employee.competencyLevel}%` }} />
                         </div>
                         <span className={`text-xs font-bold ${compColors.text}`}>{employee.competencyLevel}%</span>
                       </div>
                     </td>
                     <td className="px-6 py-5 max-w-md">
-                      <div className="bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/20 p-3 rounded-lg flex gap-3 group-hover:bg-blue-500/10 transition-colors">
+                      <div className="bg-blue-500/5 border border-blue-500/20 p-3 rounded-lg flex gap-3 group-hover:bg-blue-500/10 transition-colors">
                         <Icon name="auto_awesome" className="text-blue-500 text-lg shrink-0" />
-                        <p className="text-xs leading-relaxed italic text-gray-700 dark:text-gray-300">
+                        <p className="text-xs leading-relaxed italic text-gray-700">
                           "{employee.aiFeedback}"
                         </p>
                       </div>
                     </td>
                     <td className="px-6 py-5">
-                      <span className="text-sm font-black bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">
+                      <span className="text-sm font-black bg-gray-100 px-2 py-1 rounded">
                         {employee.score}
                       </span>
                     </td>
                     <td className="px-6 py-5">
-                      <button className="size-8 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-400">
+                      <button className="size-8 flex items-center justify-center rounded-full hover:bg-gray-200 text-gray-400">
                         <Icon name="more_vert" className="text-xl" />
                       </button>
                     </td>

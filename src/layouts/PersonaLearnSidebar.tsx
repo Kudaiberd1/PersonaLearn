@@ -22,7 +22,7 @@ export default function PersonaLearnSidebar() {
   const location = useLocation();
 
   return (
-    <aside className="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col h-full">
+    <aside className="w-64 flex-shrink-0 border-r border-slate-200 bg-white flex flex-col h-full">
       <div className="p-6 flex items-center gap-3">
         <div className="size-9 rounded-lg bg-blue-500 flex items-center justify-center text-white shadow-sm shadow-blue-500/20">
           <Icon name="psychology" className="text-xl" />
@@ -42,7 +42,7 @@ export default function PersonaLearnSidebar() {
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${
                 isActive
                   ? 'bg-blue-500/5 text-blue-500 font-semibold border border-blue-500/10'
-                  : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100'
+                  : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
               }`}
             >
               <Icon name={item.icon} className="text-[22px]" />
@@ -51,10 +51,10 @@ export default function PersonaLearnSidebar() {
           );
         })}
       </nav>
-      <div className="p-4 mt-auto border-t border-slate-100 dark:border-slate-800">
+      <div className="p-4 mt-auto border-t border-slate-100">
         <div className="flex items-center gap-3 p-2">
           <div
-            className="size-9 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center border border-slate-200 dark:border-slate-600 shadow-sm"
+            className="size-9 rounded-full bg-slate-200 bg-cover bg-center border border-slate-200 shadow-sm"
             style={{
               backgroundImage:
                 "url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9_gI4z1AeI_SeVngeRHxh2ncUZtPfPr09J0CYW2S3Ym0XbD6GWaTM6oB2GuOAeSg3kLD-ZCehpHk_4iiAAnnRR3jQeZjW88-GVKEM_9VfYJAnzFxREnYY9HXZbfyO5wJmfjm5anGLGGei590ay58H-rEIRtx7KEyz8C92s__leWLbOWvcCe6kq3s0r90PjIP0VzQOcVOd3luF1iuPRSbkYa-W-lKUQhHyhcHm7k4Zs-GBTem2NPi-ZWJe_tidHpxaxtQZCRh79zQ')",
@@ -64,7 +64,7 @@ export default function PersonaLearnSidebar() {
             <p className="text-sm font-semibold truncate">Александр М.</p>
             <p className="text-[11px] text-slate-500 truncate font-medium">Head of Sales</p>
           </div>
-          <button className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+          <button className="text-slate-400 hover:text-slate-600 transition-colors">
             <Icon name="logout" className="text-lg" />
           </button>
         </div>

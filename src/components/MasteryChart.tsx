@@ -26,13 +26,13 @@ export default function MasteryChart({ title, subtitle, totalPercentage, categor
   let currentOffset = 0;
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm">
+    <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h4 className="text-base font-bold">{title}</h4>
           <p className="text-xs text-slate-500 mt-1 font-medium">{subtitle}</p>
         </div>
-        <button className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+        <button className="p-1.5 text-slate-400 hover:text-slate-600 transition-colors">
           <Icon name="tune" className="text-xl" />
         </button>
       </div>
@@ -40,7 +40,7 @@ export default function MasteryChart({ title, subtitle, totalPercentage, categor
         <div className="relative size-44">
           <svg className="size-full transform -rotate-90" viewBox="0 0 36 36">
             <circle
-              className="stroke-slate-50 dark:stroke-slate-800"
+              className="stroke-slate-50"
               cx="18"
               cy="18"
               fill="none"
@@ -68,7 +68,7 @@ export default function MasteryChart({ title, subtitle, totalPercentage, categor
             })}
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <span className="text-2xl font-black text-slate-800 dark:text-white">{totalPercentage}%</span>
+            <span className="text-2xl font-black text-slate-800">{totalPercentage}%</span>
             <span className="text-[9px] text-slate-400 uppercase font-black tracking-widest mt-0.5">Active</span>
           </div>
         </div>
@@ -81,9 +81,9 @@ export default function MasteryChart({ title, subtitle, totalPercentage, categor
                   category.color === 'emerald' ? 'shadow-emerald-500/40' :
                   'shadow-orange-400/40'
                 }`}></div>
-                <span className="text-[13px] font-medium text-slate-600 dark:text-slate-400">{category.name}</span>
+                <span className="text-[13px] font-medium text-slate-600">{category.name}</span>
               </div>
-              <span className="text-[13px] font-bold text-slate-800 dark:text-slate-200">{category.percentage}%</span>
+              <span className="text-[13px] font-bold text-slate-800">{category.percentage}%</span>
             </div>
           ))}
         </div>

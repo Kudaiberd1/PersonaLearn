@@ -5,10 +5,10 @@ import dashboardData from '../data/dashboard.json';
 export default function DashboardManager1() {
   const getColorClasses = (color: string) => {
     const colors: Record<string, string> = {
-      blue: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400',
-      emerald: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400',
-      purple: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
-      orange: 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400',
+      blue: 'bg-blue-100 text-blue-600',
+      emerald: 'bg-emerald-100 text-emerald-600',
+      purple: 'bg-purple-100 text-purple-600',
+      orange: 'bg-orange-100 text-orange-600',
     };
     return colors[color] || colors.blue;
   };
@@ -29,7 +29,7 @@ export default function DashboardManager1() {
         {dashboardData.kpis.map((kpi) => (
           <div
             key={kpi.id}
-            className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
+            className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm"
           >
             <div className="flex justify-between items-start mb-4">
               <span className={`p-2 ${getColorClasses(kpi.color)} rounded-lg material-symbols-outlined`}>
@@ -52,7 +52,7 @@ export default function DashboardManager1() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h4 className="text-lg font-bold">Прогресс по сотрудникам</h4>
@@ -77,7 +77,7 @@ export default function DashboardManager1() {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h4 className="text-lg font-bold">Освоение материалов</h4>
@@ -91,7 +91,7 @@ export default function DashboardManager1() {
             <div className="relative size-48">
               <svg className="size-full transform -rotate-90" viewBox="0 0 36 36">
                 <circle
-                  className="stroke-slate-100 dark:stroke-slate-800"
+                  className="stroke-slate-100"
                   cx="18"
                   cy="18"
                   fill="none"
@@ -154,7 +154,7 @@ export default function DashboardManager1() {
           {dashboardData.quickActions.map((action) => (
             <button
               key={action.id}
-              className="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-blue-500 hover:bg-blue-500/5 transition-all text-left group"
+              className="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:bg-blue-500/5 transition-all text-left group"
             >
               <div className="size-12 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-colors">
                 <Icon name={action.icon} />
