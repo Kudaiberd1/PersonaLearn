@@ -1,0 +1,71 @@
+{
+  "kpis": [
+    {
+      "icon": "group",
+      "label": "Всего сотрудников",
+      "value": "124",
+      "change": "+12%",
+      "changeType": "positive",
+      "iconBgColor": "blue"
+    },
+    {
+      "icon": "school",
+      "label": "Процент обучения",
+      "value": "78%",
+      "change": "+5%",
+      "changeType": "positive",
+      "iconBgColor": "emerald"
+    },
+    {
+      "icon": "verified",
+      "label": "Среднее мастерство",
+      "value": "4.2",
+      "valueSuffix": "/ 5",
+      "change": "+0.3",
+      "changeType": "positive",
+      "iconBgColor": "amber"
+    },
+    {
+      "icon": "forum",
+      "label": "AI диалоги",
+      "value": "1,542",
+      "change": "-2%",
+      "changeType": "negative",
+      "iconBgColor": "purple"
+    }
+  ],
+  "progressData": [
+    { "name": "Иван", "percentage": 85, "isActive": true },
+    { "name": "Анна", "percentage": 45, "isActive": false },
+    { "name": "Петр", "percentage": 70, "isActive": true },
+    { "name": "Ольга", "percentage": 35, "isActive": false },
+    { "name": "Макс", "percentage": 55, "isActive": false },
+    { "name": "Елена", "percentage": 40, "isActive": false },
+    { "name": "Юрий", "percentage": 90, "isActive": true }
+  ],
+  "masteryData": {
+    "totalPercentage": 92,
+    "categories": [
+      { "name": "Скрипты продаж", "percentage": 75, "color": "blue" },
+      { "name": "Продукт", "percentage": 20, "color": "emerald" },
+      { "name": "B2B Лояльность", "percentage": 5, "color": "orange" }
+    ]
+  },
+  "quickActions": [
+    {
+      "icon": "person_add",
+      "title": "Добавить сотрудника",
+      "description": "Регистрация нового менеджера"
+    },
+    {
+      "icon": "upload_file",
+      "title": "Загрузить материал",
+      "description": "PDF, Текст или Сценарий"
+    },
+    {
+      "icon": "chat_bubble",
+      "title": "Новая тренировка",
+      "description": "Создать сценарий диалога"
+    }
+  ]
+}

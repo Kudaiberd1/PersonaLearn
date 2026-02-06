@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Материалы PersonaLearn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-gray-100 font-display transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-[#1a2430] px-6 py-3 lg:px-10">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl font-bold">school</span>
+</div>
+<h2 class="text-[#111418] dark:text-white text-xl font-extrabold leading-tight tracking-[-0.015em]">PersonaLearn</h2>
+</div>
+<div class="hidden md:block h-6 w-px bg-gray-200 dark:bg-gray-700"></div>
+<div class="hidden md:flex items-center gap-6">
+<span class="text-sm font-semibold text-[#617289]">Панель администратора</span>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden border border-[#dbe0e6] dark:border-gray-700 bg-[#f0f2f4] dark:bg-gray-800">
+<div class="text-[#617289] flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:outline-0 focus:ring-0 placeholder:text-[#617289] px-4 pl-2 text-sm font-normal" placeholder="Поиск материалов..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f2f4] dark:bg-gray-800 text-[#111418] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white dark:border-gray-700 shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCL2GXWD0s--AKpyuIJZIupjy1JBFHrVXnr5exq39pPpaNe_AH5ilKraxsn0EmFG1P5nFScppSlekaRuRFsYglH_T1HKvwZLzrhgWOIQY4BPg7osaPBgTwa3CxsMcFaUmWv5sslKoXF48h1s4irMtgjokJvyzCub-USAlPVp6T4Kg0oxLcI_ZiErXIQwbd_qtXmjX44gwFsJ1wZQ-7hUNO1_MgntJtbKF2DjytCHtKHDpNufexap3DsqtRNigYFpoexkpG-wRgnOrg");'></div>
+</div>
+</header>
+<main class="flex-1 flex flex-col md:flex-row">
+<aside class="w-full md:w-64 border-r border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-[#1a2430] p-4 shrink-0">
+<div class="flex flex-col gap-6">
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617289] hover:bg-gray-100 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Аналитика</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617289] hover:bg-gray-100 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Сотрудники</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">folder</span>
+<span class="text-sm font-bold">Материалы</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617289] hover:bg-gray-100 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Настройки</span>
+</a>
+</nav>
+</div>
+</aside>
+<section class="flex-1 p-6 lg:p-10 overflow-y-auto">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+<div>
+<h2 class="text-[#111418] dark:text-white text-3xl font-black leading-tight tracking-tight">Материалы обучения</h2>
+<p class="text-[#617289] dark:text-gray-400 mt-1">Управляйте контентом и учебными модулями для ваших менеджеров</p>
+</div>
+<button class="flex items-center justify-center gap-2 rounded-xl h-12 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Загрузить материал</span>
+</button>
+</div>
+<div class="flex border-b border-[#dbe0e6] dark:border-gray-800 mb-8 overflow-x-auto scrollbar-hide">
+<button class="flex items-center gap-2 border-b-2 border-primary text-primary px-4 pb-4 font-bold text-sm whitespace-nowrap">
+<span>Все материалы</span>
+<span class="bg-primary/10 px-2 py-0.5 rounded text-[10px]">14</span>
+</button>
+<button class="flex items-center gap-2 border-b-2 border-transparent text-[#617289] px-4 pb-4 font-medium text-sm hover:text-primary transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-lg">videocam</span>
+<span>Видео</span>
+</button>
+<button class="flex items-center gap-2 border-b-2 border-transparent text-[#617289] px-4 pb-4 font-medium text-sm hover:text-primary transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-lg">description</span>
+<span>PDF</span>
+</button>
+<button class="flex items-center gap-2 border-b-2 border-transparent text-[#617289] px-4 pb-4 font-medium text-sm hover:text-primary transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-lg">mic</span>
+<span>Аудио</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="group bg-white dark:bg-[#1a2430] border border-[#dbe0e6] dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative w-full aspect-video bg-gray-100 dark:bg-gray-800 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5Uw4fo4Jl-msf6idAOK5BUrCvs-Hv4JQzUMoSiprDCpZcM-vUL_HA_QaIS-cf-E9yPwb9VGWadgWOW4TzrTZ7rUBM3ks9UNruQSvKAbnTvueQpuS8UNNpsfhfRXcmtSEchYVdylG5PKSBeiIjLx_XueT8YlIQrQRV7LcKcpKNah3XxKa5rmS7UGGyO3e02mI15jeHyZ8bytMCHUngfVxrG2M9b1L3gocycon9aT_8p0Cjex0EhDzVDHBxrniKIDT29F-tdZv5B2I");'></div>
+<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded">08:45</div>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Видео</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-[#111418] dark:text-white font-bold text-base leading-tight mb-3 line-clamp-2">Введение в методологию PersonaLearn</h3>
+<div class="mt-auto">
+<div class="flex justify-between items-center mb-1.5">
+<span class="text-xs text-[#617289] dark:text-gray-400 font-medium">Мастерство</span>
+<span class="text-xs text-primary font-bold">85%</span>
+</div>
+<div class="w-full h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-[#1a2430] border border-[#dbe0e6] dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative w-full aspect-video bg-gray-100 dark:bg-gray-800 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRLcbfIzDjWxGKv32Eo4jIA9avab60qk5UFHI5yAmnjYTMsmDHR9tGbKMjGEMF6Bk4ObVN2Ir9DuLcMMLMkQ-zb7YXlp3at0OLI5fkRXbu9iUcc-cZ5P8MseOAKCRWb0G-BQfbpV3Wm1t0CtU_Ip0LYwhH1nPeOf5Tp4ZQ4x69u_jQvKfOdizuCnMYLiSpwVakoolsNCsezVLTXxaL_mIkLt9RRMUeDhxdxo3NB1EPskFnJRbqTPNn7vNwcWMbMQJ4Tjh7s8M6qlg");'></div>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<span class="bg-orange-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">PDF</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-[#111418] dark:text-white font-bold text-base leading-tight mb-3 line-clamp-2">Скрипт работы с возражениями 2024</h3>
+<div class="mt-auto">
+<div class="flex justify-between items-center mb-1.5">
+<span class="text-xs text-[#617289] dark:text-gray-400 font-medium">Мастерство</span>
+<span class="text-xs text-primary font-bold">42%</span>
+</div>
+<div class="w-full h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 42%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-[#1a2430] border border-[#dbe0e6] dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative w-full aspect-video bg-gray-100 dark:bg-gray-800 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTTlIyV1hii5n7Wx3ScN8jszQxO4INNulITbUYmMpai-bCi69i7vg6EojffnwXVdsBH1D7gCxiQHrNXzKmmYeeN92HfnvibcjOiVReyh7vDFl2axCnSapl6X1RxG4VzUIOs8LqaE8j7O7pCUfIOAbaAHIFKy7StacU6zOIEA495nulQ33JaqeYiFkDcYu6WsU8Dx_rq8tdqmAiYtx5whlZYjl1yHEUuBGcNTpR6t6hQ8ff4E5AOQc-KCf8PxM1Vu_IX6ViWMa81DM");'></div>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<span class="bg-purple-600/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Аудио</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-[#111418] dark:text-white font-bold text-base leading-tight mb-3 line-clamp-2">Техники закрытия сделок: Подкаст</h3>
+<div class="mt-auto">
+<div class="flex justify-between items-center mb-1.5">
+<span class="text-xs text-[#617289] dark:text-gray-400 font-medium">Мастерство</span>
+<span class="text-xs text-primary font-bold">70%</span>
+</div>
+<div class="w-full h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 70%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-[#1a2430] border border-[#dbe0e6] dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative w-full aspect-video bg-gray-100 dark:bg-gray-800 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxh1fWQT5JA7AvIBRqInTcjPKotP5vpVVlUpOugkQP0EcU0Bp9s-qH0-fJtW0I1QSm27RdwK5lNdKveyNIMz1pq3HYwesqTcF-5Gg7pJKJrAhQTjT0eOYKyMq4jr_-kGLOuNckpet0qT9OhfsfLEfitvkb6fBBOAh1sDXt7aKA25qyAB_8XXF_Rea8ppeLZsQcbqA0eOF-8jnfLSTQg-6edg5ZmqN92bhS00cgjZS1MNoqhC5uG5W3gMmem1yIHfKfFaD3yganIoc");'></div>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Видео</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-[#111418] dark:text-white font-bold text-base leading-tight mb-3 line-clamp-2">Холодные звонки: Разбор успешных кейсов</h3>
+<div class="mt-auto">
+<div class="flex justify-between items-center mb-1.5">
+<span class="text-xs text-[#617289] dark:text-gray-400 font-medium">Мастерство</span>
+<span class="text-xs text-primary font-bold">30%</span>
+</div>
+<div class="w-full h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 30%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group border-2 border-dashed border-[#dbe0e6] dark:border-gray-800 rounded-xl flex flex-col items-center justify-center p-6 text-center hover:bg-white dark:hover:bg-[#1a2430] hover:border-primary transition-all cursor-pointer min-h-[250px]">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform mb-4">
+<span class="material-symbols-outlined text-3xl">upload_file</span>
+</div>
+<h4 class="text-[#111418] dark:text-white font-bold mb-1">Новый материал</h4>
+<p class="text-sm text-[#617289]">Нажмите, чтобы добавить<br/>обучающий модуль</p>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden" id="upload-modal">
+<div class="bg-white dark:bg-[#1a2430] w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden">
+<div class="flex justify-between items-center p-6 border-b border-gray-100 dark:border-gray-800">
+<h3 class="text-xl font-bold text-[#111418] dark:text-white">Загрузить новый материал</h3>
+<button class="text-[#617289] hover:text-black dark:hover:text-white">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 space-y-6">
+<div class="border-2 border-dashed border-[#dbe0e6] dark:border-gray-700 rounded-xl p-8 flex flex-col items-center justify-center bg-[#f6f7f8] dark:bg-gray-800/50 hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">cloud_upload</span>
+<p class="text-sm font-semibold text-[#111418] dark:text-white">Выберите файл или перетащите его сюда</p>
+<p class="text-xs text-[#617289] mt-1">Поддерживаемые форматы: MP4, MP3, PDF (макс. 100MB)</p>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-bold text-[#111418] dark:text-gray-300 mb-1.5">Название материала</label>
+<input class="w-full bg-white dark:bg-gray-800 border-[#dbe0e6] dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-sm" placeholder="Введите название курса или файла" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-[#111418] dark:text-gray-300 mb-1.5">Цель обучения</label>
+<textarea class="w-full bg-white dark:bg-gray-800 border-[#dbe0e6] dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-sm" placeholder="Чему научится сотрудник после изучения?" rows="3"></textarea>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-bold text-[#111418] dark:text-gray-300 mb-1.5">Целевая аудитория</label>
+<select class="w-full bg-white dark:bg-gray-800 border-[#dbe0e6] dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-sm">
+<option>Все сотрудники</option>
+<option>Новички (Onboarding)</option>
+<option>Менеджеры по продажам</option>
+<option>Аккаунт-менеджеры</option>
+<option>Руководители групп</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-bold text-[#111418] dark:text-gray-300 mb-1.5">Тип контента</label>
+<select class="w-full bg-white dark:bg-gray-800 border-[#dbe0e6] dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-sm">
+<option>Видео-урок</option>
+<option>Аудио-тренинг</option>
+<option>PDF-инструкция</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-gray-800/50 p-6 flex justify-end gap-3">
+<button class="px-6 py-2.5 text-sm font-bold text-[#617289] hover:text-[#111418] dark:hover:text-white transition-colors">
+                Отмена
+            </button>
+<button class="px-8 py-2.5 bg-primary text-white text-sm font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                Опубликовать
+            </button>
+</div>
+</div>
+</div>
+
+</body></html>

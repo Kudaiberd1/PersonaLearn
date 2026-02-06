@@ -1,0 +1,62 @@
+{
+  "radarData": {
+    "fact": {
+      "productKnowledge": 9.2,
+      "confidence": 8.5,
+      "objections": 7.8,
+      "empathy": 6.4,
+      "closing": 8.1
+    },
+    "target": {
+      "productKnowledge": 10,
+      "confidence": 9,
+      "objections": 9,
+      "empathy": 8,
+      "closing": 9
+    }
+  },
+  "knowledgeGaps": [
+    {
+      "id": 1,
+      "title": "Обновление API 3.0",
+      "progress": 35,
+      "trend": -15,
+      "severity": "high",
+      "message": "Требуется внеплановый тренинг"
+    },
+    {
+      "id": 2,
+      "title": "Юридический блок",
+      "progress": 62,
+      "severity": "medium"
+    },
+    {
+      "id": 3,
+      "title": "Кейсы Финтеха",
+      "progress": 84,
+      "severity": "low"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Александр Иванов",
+      "role": "Senior Manager",
+      "initials": "АИ",
+      "competencyLevel": 94,
+      "score": 9.8,
+      "aiFeedback": "Демонстрирует превосходное понимание технического стека. Рекомендуется фокус на стратегических переговорах с C-level.",
+      "avatarColor": "blue"
+    },
+    {
+      "id": 2,
+      "name": "Елена Смирнова",
+      "role": "Junior Sales",
+      "initials": "ЕС",
+      "competencyLevel": 65,
+      "score": 6.4,
+      "aiFeedback": "Слабое закрытие возражений по цене. Требуется симуляция диалога 'Дорого' с AI-тренажером.",
+      "avatarColor": "purple"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Иван Иванов",
+      "email": "ivan@example.com",
+      "position": "Sales Manager",
+      "trainingProgress": 75,
+      "aiScore": 88,
+      "trend": "up",
+      "avatar": "ИИ"
+    },
+    {
+      "id": 2,
+      "name": "Анна Сидорова",
+      "email": "anna.s@example.com",
+      "position": "Senior Sales",
+      "trainingProgress": 100,
+      "aiScore": 94,
+      "trend": "star",
+      "avatar": "АС"
+    },
+    {
+      "id": 3,
+      "name": "Дмитрий Петров",
+      "email": "petrov.d@example.com",
+      "position": "Junior Sales",
+      "trainingProgress": 30,
+      "aiScore": 72,
+      "trend": "flat",
+      "avatar": "ДП"
+    },
+    {
+      "id": 4,
+      "name": "Елена Волкова",
+      "email": "e.volkova@example.com",
+      "position": "Sales Manager",
+      "trainingProgress": 55,
+      "aiScore": 81,
+      "trend": "up",
+      "avatar": "ЕВ"
+    }
+  ],
+  "stats": {
+    "totalLessons": 1482,
+    "averagePerformance": 84.5,
+    "trainingHours": 328
+  }
+}

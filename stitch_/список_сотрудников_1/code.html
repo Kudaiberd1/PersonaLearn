@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Список сотрудников | SalesTrain AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-10 py-3">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center bg-primary rounded-lg p-1.5 text-white">
+<span class="material-symbols-outlined text-2xl">rocket_launch</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">SalesTrain AI</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Обучение</a>
+<a class="text-primary text-sm font-semibold border-b-2 border-primary py-4" href="#">Сотрудники</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Аналитика</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Настройки</a>
+</nav>
+<div class="flex items-center gap-4 border-l border-slate-200 dark:border-slate-800 pl-8">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-semibold">Администратор</p>
+<p class="text-xs text-slate-500">ООО "Ритейл Групп"</p>
+</div>
+<div class="bg-slate-200 dark:bg-slate-700 bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User avatar placeholder profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAq3zRpKEU08kXddxbmxGBJSs4XzXIwL-riOFPR7zpvMOKUUiw2_g0oJ2PPbButZtK4_ntG2OZqHIXHWWvxdpSSeJvVKyOJYTMkOrxzPBgNhVddVXROgQDkkEn024zD66yLGCWIdYfQaFT7x-gz8FqiSpyIVuKMg6gBqpTiPVXxZ44y4UO0qlaZCr67l4rN51-IGMWSmwBg5xGb0LfWwoWsxFxWxTBuXyIPaixbVIjRYZjmb5TMH4E-B-H1ykl58zyjnNYFzkqAYKE");'></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar -->
+<aside class="hidden lg:flex w-64 flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 gap-2">
+<div class="flex items-center gap-3 px-3 py-4 mb-2">
+<div class="flex items-center justify-center size-8 bg-primary/10 text-primary rounded-lg">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-sm font-bold">SalesTrain</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">Панель управления</p>
+</div>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-sm font-medium">Дашборд</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium">Команда</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<p class="text-sm font-medium">Библиотека</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-sm font-medium">Отчеты</p>
+</a>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-4">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<p class="text-sm font-medium">Поддержка</p>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto px-6 lg:px-10 py-8">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+<div>
+<h1 class="text-slate-900 dark:text-white text-3xl font-black tracking-tight">Список сотрудников</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Управление доступом, назначение тренингов и мониторинг прогресса.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-5 rounded-lg transition-all shadow-md shadow-primary/10">
+<span class="material-symbols-outlined">person_add</span>
+<span>Добавить сотрудника</span>
+</button>
+</div>
+<!-- Search and Filters -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-4 mb-6">
+<div class="flex flex-col md:flex-row gap-4">
+<div class="flex-1 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:ring-primary focus:border-primary rounded-lg pl-10 pr-4 py-2.5 text-sm" placeholder="Поиск по имени, должности или ID" type="text" value=""/>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg text-slate-400">filter_list</span>
+<span>Фильтры</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg text-slate-400">download</span>
+<span>Экспорт</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<th class="px-6 py-4 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Имя</th>
+<th class="px-6 py-4 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Должность</th>
+<th class="px-6 py-4 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-1/4">Статус обучения</th>
+<th class="px-6 py-4 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">AI-оценка</th>
+<th class="px-6 py-4 text-right text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Действия</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">ИИ</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Иван Иванов</span>
+<span class="text-xs text-slate-500">ivan@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded text-xs font-medium uppercase tracking-wide">Sales Manager</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+</div>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">75%</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="text-sm font-bold text-green-600 dark:text-green-400">88%</span>
+<span class="material-symbols-outlined text-green-500 text-sm">trending_up</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:text-primary/80 font-semibold px-3 py-1.5 hover:bg-primary/5 rounded-lg transition-all">Назначить материалы</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-all">Детальный отчёт</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-sm">АС</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Анна Сидорова</span>
+<span class="text-xs text-slate-500">anna.s@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded text-xs font-medium uppercase tracking-wide">Senior Sales</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full bg-green-500 rounded-full" style="width: 100%;"></div>
+</div>
+<span class="text-xs font-bold text-green-600 dark:text-green-400">100%</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="text-sm font-bold text-green-600 dark:text-green-400">94%</span>
+<span class="material-symbols-outlined text-green-500 text-sm">stars</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:text-primary/80 font-semibold px-3 py-1.5 hover:bg-primary/5 rounded-lg transition-all">Назначить материалы</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-all">Детальный отчёт</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm">ДП</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Дмитрий Петров</span>
+<span class="text-xs text-slate-500">petrov.d@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded text-xs font-medium uppercase tracking-wide">Junior Sales</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full bg-amber-500 rounded-full" style="width: 30%;"></div>
+</div>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">30%</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">72%</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">trending_flat</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:text-primary/80 font-semibold px-3 py-1.5 hover:bg-primary/5 rounded-lg transition-all">Назначить материалы</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-all">Детальный отчёт</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 flex items-center justify-center font-bold text-sm">ЕВ</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Елена Волкова</span>
+<span class="text-xs text-slate-500">e.volkova@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded text-xs font-medium uppercase tracking-wide">Sales Manager</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 55%;"></div>
+</div>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">55%</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="text-sm font-bold text-green-600 dark:text-green-400">81%</span>
+<span class="material-symbols-outlined text-green-500 text-sm">trending_up</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+<div class="flex justify-end gap-3">
+<button class="text-primary hover:text-primary/80 font-semibold px-3 py-1.5 hover:bg-primary/5 rounded-lg transition-all">Назначить материалы</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-all">Детальный отчёт</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/30 flex items-center justify-between">
+<p class="text-xs text-slate-500 dark:text-slate-400">Показано 4 из 124 сотрудников</p>
+<div class="flex gap-2">
+<button class="size-8 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="size-8 flex items-center justify-center bg-primary text-white rounded text-sm font-bold">1</button>
+<button class="size-8 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-white dark:hover:bg-slate-700">2</button>
+<button class="size-8 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-white dark:hover:bg-slate-700">3</button>
+<button class="size-8 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">school</span>
+<span class="text-xs font-bold text-green-500">+12%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Всего уроков</p>
+<p class="text-2xl font-black mt-1">1,482</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">emoji_events</span>
+<span class="text-xs font-bold text-green-500">+5%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Ср. успеваемость</p>
+<p class="text-2xl font-black mt-1">84.5%</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">timer</span>
+<span class="text-xs font-bold text-slate-400">±0%</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Часов обучения</p>
+<p class="text-2xl font-black mt-1">328</p>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

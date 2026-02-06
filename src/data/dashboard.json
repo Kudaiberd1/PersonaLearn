@@ -1,0 +1,73 @@
+{
+  "kpis": [
+    {
+      "id": 1,
+      "label": "Всего сотрудников",
+      "value": "124",
+      "change": "+12%",
+      "icon": "groups",
+      "color": "blue"
+    },
+    {
+      "id": 2,
+      "label": "Процент обучения",
+      "value": "78%",
+      "change": "+5%",
+      "icon": "task_alt",
+      "color": "emerald"
+    },
+    {
+      "id": 3,
+      "label": "Средний уровень",
+      "value": "4.2/5",
+      "change": "+0.3",
+      "icon": "star",
+      "color": "purple"
+    },
+    {
+      "id": 4,
+      "label": "AI диалоги",
+      "value": "1,542",
+      "change": "-2%",
+      "icon": "forum",
+      "color": "orange"
+    }
+  ],
+  "progressData": [
+    { "name": "Иван", "percentage": 85 },
+    { "name": "Анна", "percentage": 45 },
+    { "name": "Петр", "percentage": 70 },
+    { "name": "Ольга", "percentage": 35 },
+    { "name": "Макс", "percentage": 55 },
+    { "name": "Елена", "percentage": 40 },
+    { "name": "Юрий", "percentage": 90 }
+  ],
+  "materialMastery": {
+    "total": 92,
+    "categories": [
+      { "name": "Скрипты продаж", "percentage": 75, "color": "blue" },
+      { "name": "Продукт", "percentage": 20, "color": "emerald" },
+      { "name": "B2B Лояльность", "percentage": 5, "color": "orange" }
+    ]
+  },
+  "quickActions": [
+    {
+      "id": 1,
+      "title": "Добавить сотрудника",
+      "description": "Регистрация нового менеджера",
+      "icon": "person_add"
+    },
+    {
+      "id": 2,
+      "title": "Загрузить материал",
+      "description": "PDF, Текст или Сценарий",
+      "icon": "upload_file"
+    },
+    {
+      "id": 3,
+      "title": "Создать тренировку",
+      "description": "Новый сценарий AI диалога",
+      "icon": "chat_add_on"
+    }
+  ]
+}

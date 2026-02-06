@@ -1,0 +1,45 @@
+{
+  "stats": {
+    "totalEmployees": 124,
+    "totalChange": "+4",
+    "inTraining": 86,
+    "averageAIScore": 82,
+    "averageAIScoreLabel": "B2 Level",
+    "completedCourse": 38
+  },
+  "employees": [
+    {
+      "id": 1,
+      "name": "Иван Иванов",
+      "email": "ivanov@personalearn.ai",
+      "position": "Sales Lead",
+      "avatar": "ИИ",
+      "avatarColor": "blue",
+      "trainingProgress": 75,
+      "aiScore": 8.8,
+      "aiScoreLabel": "8.8/10"
+    },
+    {
+      "id": 2,
+      "name": "Анна Сидорова",
+      "email": "anna.s@personalearn.ai",
+      "position": "Account Manager",
+      "avatar": "АС",
+      "avatarColor": "emerald",
+      "trainingProgress": 100,
+      "aiScore": 9.4,
+      "aiScoreLabel": "9.4/10"
+    },
+    {
+      "id": 3,
+      "name": "Дмитрий Петров",
+      "email": "petrov@personalearn.ai",
+      "position": "Junior Seller",
+      "avatar": "ДП",
+      "avatarColor": "amber",
+      "trainingProgress": 30,
+      "aiScore": 6.5,
+      "aiScoreLabel": "6.5/10"
+    }
+  ]
+}

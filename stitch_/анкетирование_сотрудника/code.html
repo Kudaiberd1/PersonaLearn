@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Анкетирование сотрудника | SalesAI Training</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Inter", sans-serif
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+input[type="radio"]:checked {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCcizLEYRsHy-k8ASqxhTuHS_XqtLv0XXXHXxLZvxNcBeVJWQIqLemE6QEGqM1HUDW0rKCokBTesxsB1T6DnSxB3yM8P4ReeJZvWqD2MwU9X26mm3XVcPIl9g-KxFsu_sgI9Zn9YU5h4_rCvKJwcdXzsDOZC-J8sQx18fppJ_jzTeya-4Jb5x5HgaXp-Zx8Be7CwaHFD-uiD9lmKl0A_ebhAsysvpv_KX0-ia4B4K6BjxMouP5ejdPa_h-ruL9cOuqpa2IWAvSdOwo)
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">insights</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">SalesAI Training</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Обучение</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Аналитика</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Команда</a>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-semibold text-slate-900 dark:text-white">Александр В.</p>
+<p class="text-[10px] text-slate-500">Менеджер по продажам</p>
+</div>
+<div class="bg-slate-200 dark:bg-slate-700 rounded-full size-10 border-2 border-primary/20 bg-cover bg-center" data-alt="User profile avatar photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBClpsIFetdRYa93mIBsFY3VYhDJWQYNePTpdyb5zB6niotETw50eFPQHqwPuiyaxbrtGz0iKzxZHk4_R7r_hhZnb_bbS6KaJtC3jnUxVOg86nNZrdit1hoDQOuZMApCwS-9IVTaJRVrHEzgv40TnYR4o2EHzo1snMRCeWWt2Fp7Uxq280Mn2wRqbDacv82zbRw1NIqUQiB1MDP8ilJuxua5iwQclulZqXjBED2KAubeNho0LLnSf1wvQbDHxQcQQqLE6flhEYLFY0");'></div>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10 px-4 md:px-0">
+<div class="layout-content-container flex flex-col max-w-[800px] flex-1">
+<!-- Progress Section -->
+<div class="flex flex-col gap-4 mb-8 bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">Анкетирование сотрудника</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Шаг 3: Определение стиля взаимодействия</p>
+</div>
+<div class="text-right">
+<span class="text-primary font-bold text-lg">30%</span>
+<p class="text-slate-400 text-xs uppercase tracking-wider">Заполнено</p>
+</div>
+</div>
+<div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 30%;"></div>
+</div>
+</div>
+<!-- Main Questionnaire Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-slate-200 dark:border-slate-800 overflow-hidden">
+<!-- Question Header Image -->
+<div class="h-48 w-full bg-gradient-to-r from-primary/20 to-blue-600/10 flex items-center justify-center relative">
+<div class="absolute inset-0 bg-cover bg-center opacity-20" data-alt="Abstract blue patterns for business context" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuoYBIdYrw8CCQjv2xl86Lw7AVGGQGWbW1BoNCAKSqfuraz9xFE-4rQa12RGSWQCTrd0IbcNZOuxWaExBse_dcuYqEw8eCg8GNSghv3Ay_V1V0V6jImFmG0KaiQr80kKszlQcPk9IplutZFVM1Z6OW8EGEu45YufDoYMZHM54YCvg1jJOKsK7yIxvpf-7j7xiSk4_NzTay7SFse7k7uhOGwHPw8aa2wKycdMNmDGyWCDo6bWfpN2EVk3cvOrXDjZBdJWqGfrqmWUo')"></div>
+<div class="relative z-10 flex flex-col items-center text-center px-6">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">psychology</span>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Ваш стиль обучения и поведения</h3>
+<p class="text-slate-600 dark:text-slate-400 max-w-md">Это поможет ИИ-наставнику адаптировать теорию и практические кейсы под ваши особенности.</p>
+</div>
+</div>
+<div class="p-8 space-y-10">
+<!-- Multiple Choice Question -->
+<section class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold">1</span>
+<p class="text-lg font-semibold text-slate-900 dark:text-white leading-tight">Как вы обычно предпочитаете получать новую информацию о продукте?</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 pl-9">
+<label class="flex items-center gap-3 rounded-lg border border-slate-200 dark:border-slate-700 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input checked="" class="h-5 w-5 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent" name="learning_style" type="radio"/>
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-medium text-sm">Визуальный</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs">Схемы, графики, видео-уроки</span>
+</div>
+</label>
+<label class="flex items-center gap-3 rounded-lg border border-slate-200 dark:border-slate-700 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input class="h-5 w-5 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent" name="learning_style" type="radio"/>
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-medium text-sm">Аудиальный</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs">Подкасты, живые лекции, звонки</span>
+</div>
+</label>
+<label class="flex items-center gap-3 rounded-lg border border-slate-200 dark:border-slate-700 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input class="h-5 w-5 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent" name="learning_style" type="radio"/>
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-medium text-sm">Текстовый</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs">Статьи, лонгриды, инструкции</span>
+</div>
+</label>
+<label class="flex items-center gap-3 rounded-lg border border-slate-200 dark:border-slate-700 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input class="h-5 w-5 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent" name="learning_style" type="radio"/>
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-medium text-sm">Практический</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs">Ролевые игры, тесты, симуляции</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Scale Question (1-10) -->
+<section class="space-y-6">
+<div class="flex items-start gap-3">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold">2</span>
+<p class="text-lg font-semibold text-slate-900 dark:text-white leading-tight">Оцените уровень своего комфорта при работе с возражениями клиентов</p>
+</div>
+<div class="pl-9 space-y-4">
+<div class="flex justify-between items-center text-xs text-slate-500 font-medium px-1">
+<span>Очень низкий (Избегаю)</span>
+<span>Абсолютно уверен</span>
+</div>
+<div class="grid grid-cols-10 gap-2">
+<button class="h-12 border border-slate-200 dark:border-slate-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all font-medium text-sm">1</button>
+<button class="h-12 border border-slate-200 dark:border-slate-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all font-medium text-sm">2</button>
+<button class="h-12 border border-slate-200 dark:border-slate-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all font-medium text-sm">3</button>
+<button class="h-12 border border-slate-200 dark:border-slate-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all font-medium text-sm">4</button>
+<button class="h-12 border border-slate-200 dark:border-slate-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all font-medium text-sm">5</button>
+<button class="h-12 border border-slate-200 dark:border-slate-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all font-medium text-sm">6</button>
+<button class="h-12 border border-primary bg-primary/10 text-primary rounded-lg flex items-center justify-center font-bold text-sm">7</button>
+<button class="h-12 border border-slate-200 dark:border-slate-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all font-medium text-sm">8</button>
+<button class="h-12 border border-slate-200 dark:border-slate-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all font-medium text-sm">9</button>
+<button class="h-12 border border-slate-200 dark:border-slate-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all font-medium text-sm">10</button>
+</div>
+</div>
+</section>
+<!-- Behavioral Type -->
+<section class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold">3</span>
+<p class="text-lg font-semibold text-slate-900 dark:text-white leading-tight">Какая роль в команде вам ближе всего?</p>
+</div>
+<div class="pl-9 space-y-3">
+<label class="flex items-center gap-4 rounded-lg border border-slate-200 dark:border-slate-700 p-4 cursor-pointer hover:border-primary transition-colors">
+<input class="h-5 w-5 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent" name="behavior" type="radio"/>
+<span class="text-slate-700 dark:text-slate-300 font-medium">Лидер, ведущий за собой всю команду</span>
+</label>
+<label class="flex items-center gap-4 rounded-lg border border-slate-200 dark:border-slate-700 p-4 cursor-pointer hover:border-primary transition-colors">
+<input class="h-5 w-5 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent" name="behavior" type="radio"/>
+<span class="text-slate-700 dark:text-slate-300 font-medium">Аналитик, фокусирующийся на деталях и цифрах</span>
+</label>
+<label class="flex items-center gap-4 rounded-lg border border-slate-200 dark:border-slate-700 p-4 cursor-pointer hover:border-primary transition-colors">
+<input class="h-5 w-5 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent" name="behavior" type="radio"/>
+<span class="text-slate-700 dark:text-slate-300 font-medium">Коммуникатор, сглаживающий углы в общении</span>
+</label>
+</div>
+</section>
+</div>
+<!-- Action Footer -->
+<div class="p-8 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800 flex flex-col items-center gap-6">
+<p class="text-slate-600 dark:text-slate-400 text-sm italic text-center max-w-sm">
+                        «На основе ответов мы подберём лучший формат обучения и персонального ИИ-наставника для вас»
+                    </p>
+<div class="flex gap-4 w-full justify-center">
+<button class="px-8 py-3 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                            Назад
+                        </button>
+<button class="px-12 py-3 rounded-lg bg-primary text-white font-semibold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all">
+                            Далее
+                        </button>
+</div>
+</div>
+</div>
+<!-- Footer Meta -->
+<div class="mt-8 flex justify-center items-center gap-6 text-slate-400 text-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span>
+                    Данные защищены
+                </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">bolt</span>
+                    AI-анализ в реальном времени
+                </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">help</span>
+                    Поддержка
+                </div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
