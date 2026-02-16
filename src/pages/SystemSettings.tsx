@@ -10,7 +10,10 @@ export default function SystemSettings() {
     const [profileData, setProfileData] = useState<User>();
 
     useEffect(() => {
-        api.get("/auth/me").then((res) => setProfileData(res.data)).catch((err) => toast.error("Failed to fetch user data", err.message));
+        api
+          .get('/auth/me')
+          .then((res) => setProfileData(res.data))
+          .catch((err) => toast.error(`Failed to fetch user data: ${err?.message ?? 'Unknown error'}`));
     },[])
 
     return (
@@ -42,25 +45,29 @@ export default function SystemSettings() {
                                         Имя Фамилия
                                     </label>
                                     <input
-                                        className="rounded-xl border-gray-200 focus:ring-blue-500 focus:border-blue-500 text-sm px-4 py-2"
-                                        type="text"
-                                        value={profileData?.firstName+" "+profileData?.lastName}
-                                        onChange={(e) => setProfileData({...profileData, firstName: e.target.value})}
+                                      className="rounded-xl border-gray-200 bg-gray-50 text-sm px-4 py-2 cursor-not-allowed"
+                                      type="text"
+                                      value={`${profileData?.firstName ?? ''} ${profileData?.lastName ?? ''}`.trim()}
+                                      readOnly
+                                      disabled
                                     />
                                 </div>
                                 <div className="flex flex-col gap-1.5">
                                     <label
                                         className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Email</label>
                                     <input
-                                        className="rounded-xl border-gray-200 focus:ring-blue-500 focus:border-blue-500 text-sm px-4 py-2"
-                                        type="email"
-                                        value={profileData?.email}
-                                        onChange={(e) => setProfileData({...profileData, email: e.target.value})}
+                                      className="rounded-xl border-gray-200 bg-gray-50 text-sm px-4 py-2 cursor-not-allowed"
+                                      type="email"
+                                      value={profileData?.email ?? ''}
+                                      readOnly
+                                      disabled
                                     />
                                 </div>
                             </div>
                             <div className="flex justify-end pt-2">
-                                <Button className="px-6 py-2 text-sm">Сохранить изменения</Button>
+                                <Button className="px-6 py-2 text-sm opacity-60 cursor-not-allowed" disabled>
+                                  Сохранить изменения
+                                </Button>
                             </div>
                         </div>
                     </div>
