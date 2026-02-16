@@ -35,7 +35,7 @@ export default function NotFound() {
                     </p>
 
                     <Link
-                        to="/dashboard-manager"
+                        to="/"
                         className="inline-flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 transition-colors text-white font-semibold py-3 rounded-xl"
                     >
                         Вернуться на главную

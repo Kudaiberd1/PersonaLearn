@@ -37,7 +37,7 @@ export default function AccessDenied() {
 
                     <div className="flex flex-col gap-3">
                         <Link
-                            to="/dashboard-manager"
+                            to="/"
                             className="inline-flex items-center justify-center w-full bg-red-600 hover:bg-red-700 transition-colors text-white font-semibold py-3 rounded-xl"
                         >
                             Go to Home

@@ -8,7 +8,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-    {path: '/dashboard-manager', icon: 'grid_view', label: 'Главная'},
+    {path: '/', icon: 'grid_view', label: 'Главная'},
     {path: '/employee-list', icon: 'group', label: 'Сотрудники'},
     {path: '/analytics-admin', icon: 'bar_chart', label: 'Аналитика'},
     {path: '/setting', icon: 'settings', label: 'Настройки'},

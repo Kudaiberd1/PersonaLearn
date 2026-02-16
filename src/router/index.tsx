@@ -13,15 +13,11 @@ import AccessDenied from "../pages/AccessDenied.tsx";
 
 const router = createBrowserRouter([
     {
-        path: '/',
-        element: <NotFound/>,
-    },
-    {
         path: '/login',
         element: <Login/>,
     },
     {
-        path: '/dashboard-manager',
+        path: '/',
         element: (
             <ProtectedRoute allow={["client_admin", "client_user"]}>
                 <DashboardManager/>
@@ -81,7 +77,11 @@ const router = createBrowserRouter([
         element: (
             <AccessDenied/>
         ),
-    }
+    },
+    {
+        path: '*',
+        element: <NotFound/>,
+    },
 ]);
 
 export default router;

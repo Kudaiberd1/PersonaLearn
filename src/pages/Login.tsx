@@ -16,7 +16,7 @@ export default function Login() {
         try{
             const token = await LoginApi(email, password);
             localStorage.setItem("accessToken", JSON.stringify(token));
-            navigate('/dashboard-manager');
+            navigate('/');
         }catch (err){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error
