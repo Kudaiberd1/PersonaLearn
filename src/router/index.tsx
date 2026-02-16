@@ -1,85 +1,87 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import {createBrowserRouter} from 'react-router-dom';
 import Login from '../pages/Login';
-import DashboardManager1 from '../pages/DashboardManager1';
-import DashboardManager2 from '../pages/DashboardManager2';
-import EmployeeList1 from '../pages/EmployeeList1';
-import EmployeeList2 from '../pages/EmployeeList2';
-import TrainingMaterials1 from '../pages/TrainingMaterials1';
-import TrainingMaterials2 from '../pages/TrainingMaterials2';
-import SystemSettings1 from '../pages/SystemSettings1';
-import SystemSettings2 from '../pages/SystemSettings2';
-import AnalyticsAdmin1 from '../pages/AnalyticsAdmin1';
-import AnalyticsAdmin2 from '../pages/AnalyticsAdmin2';
-import EmployeeSurvey from '../pages/EmployeeSurvey';
-import AIKnowledgeCheck from '../pages/AIKnowledgeCheck';
+import DashboardManager from '../pages/DashboardManager';
+import EmployeeList from '../pages/EmployeeList';
+import TrainingMaterials from '../pages/TrainingMaterials';
+import SystemSettings from '../pages/SystemSettings';
+import AnalyticsAdmin from '../pages/./AnalyticsAdmin';
 import EmployeeTraining from '../pages/EmployeeTraining';
-import AIDialog from '../pages/AIDialog';
+import AIHelper from "../pages/AIHelper.tsx";
+import ProtectedRoute from "./ProtectedRoute.tsx";
+import NotFound from "../pages/NotFound.tsx";
+import AccessDenied from "../pages/AccessDenied.tsx";
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Navigate to="/login" replace />,
-  },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: '/dashboard-manager-1',
-    element: <DashboardManager1 />,
-  },
-  {
-    path: '/dashboard-manager-2',
-    element: <DashboardManager2 />,
-  },
-  {
-    path: '/employee-list-1',
-    element: <EmployeeList1 />,
-  },
-  {
-    path: '/employee-list-2',
-    element: <EmployeeList2 />,
-  },
-  {
-    path: '/training-materials-1',
-    element: <TrainingMaterials1 />,
-  },
-  {
-    path: '/training-materials-2',
-    element: <TrainingMaterials2 />,
-  },
-  {
-    path: '/system-settings-1',
-    element: <SystemSettings1 />,
-  },
-  {
-    path: '/system-settings-2',
-    element: <SystemSettings2 />,
-  },
-  {
-    path: '/analytics-admin-1',
-    element: <AnalyticsAdmin1 />,
-  },
-  {
-    path: '/analytics-admin-2',
-    element: <AnalyticsAdmin2 />,
-  },
-  {
-    path: '/employee-survey',
-    element: <EmployeeSurvey />,
-  },
-  {
-    path: '/ai-knowledge-check',
-    element: <AIKnowledgeCheck />,
-  },
-  {
-    path: '/employee-training',
-    element: <EmployeeTraining />,
-  },
-  {
-    path: '/ai-dialog',
-    element: <AIDialog />,
-  },
+    {
+        path: '/',
+        element: <NotFound/>,
+    },
+    {
+        path: '/login',
+        element: <Login/>,
+    },
+    {
+        path: '/dashboard-manager',
+        element: (
+            <ProtectedRoute allow={["client_admin", "client_user"]}>
+                <DashboardManager/>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/employee-list',
+        element: (
+            <ProtectedRoute allow={["client_admin"]}>
+                <EmployeeList/>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/training-materials',
+        element: (
+            <ProtectedRoute allow={["client_admin", "client_user"]}>
+                <TrainingMaterials/>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/setting',
+        element: (
+            <ProtectedRoute allow={["client_admin", "client_user"]}>
+                <SystemSettings/>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/analytics-admin',
+        element: (
+            <ProtectedRoute allow={["client_admin"]}>
+                <AnalyticsAdmin/>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/training',
+        element: (
+            <ProtectedRoute allow={["client_user"]}>
+                <EmployeeTraining/>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/ai-helper',
+        element: (
+            <ProtectedRoute allow={["client_user"]}>
+                <AIHelper/>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/access-denied',
+        element: (
+            <AccessDenied/>
+        ),
+    }
 ]);
 
 export default router;

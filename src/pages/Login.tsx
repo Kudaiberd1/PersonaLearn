@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Icon from '../components/Icon';
 import Button from '../components/Button';
+import {LoginApi} from "../api/api.ts";
+import {toast, ToastContainer} from "react-toastify";
 
 export default function Login() {
     const [showPassword, setShowPassword] = useState(false);
@@ -9,13 +11,22 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        navigate('/dashboard-manager-2');
+        try{
+            const token = await LoginApi(email, password);
+            localStorage.setItem("accessToken", JSON.stringify(token));
+            navigate('/dashboard-manager');
+        }catch (err){
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
+            toast.error(err.message);
+        }
     };
 
     return (
         <div className="bg-background-light min-h-screen font-display">
+            <ToastContainer position="top-right" autoClose={3000} />
             <div className="flex min-h-screen w-full">
                 <div className="hidden lg:flex lg:w-1/2 flex-col justify-between p-12 bg-blue-500 relative overflow-hidden">
                     <div className="relative z-10">
@@ -30,7 +41,7 @@ export default function Login() {
                                     />
                                 </svg>
                             </div>
-                            <span className="text-xl font-bold tracking-tight">AI Training</span>
+                            <span className="text-xl font-bold tracking-tight">PersonaLearn</span>
                         </div>
                     </div>
                     <div className="relative z-10 max-w-lg">
@@ -119,45 +130,23 @@ export default function Login() {
                                     </button>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-2 py-1">
-                                <input
-                                    className="w-4 h-4 rounded border-[#dbe0e6] text-blue-500 focus:ring-blue-500 cursor-pointer"
-                                    id="remember"
-                                    type="checkbox"
-                                />
-                                <label className="text-sm text-[#111418] cursor-pointer select-none" htmlFor="remember">
-                                    Запомнить меня на 30 дней
-                                </label>
-                            </div>
                             <Button type="submit" className="w-full h-14" icon="login" iconPosition="right">
                                 Войти в аккаунт
                             </Button>
                         </form>
-                        <div className="mt-8 pt-8 border-t border-[#f0f2f4]">
-                            <button
-                                type="button"
-                                onClick={() => navigate('/dashboard-manager-2')}
-                                className="w-full h-12 flex items-center justify-center gap-3 bg-white border border-[#dbe0e6] rounded-lg text-[#111418] text-sm font-semibold hover:bg-gray-50 transition-colors"
-                            >
-                                <svg className="w-5 h-5" viewBox="0 0 24 24">
-                                    {/* Google Icon */}
-                                </svg>
-                                Войти через Google
-                            </button>
-                        </div>
-                        <p className="mt-8 text-center text-[#617289] text-sm">
-                            Нет аккаунта?{' '}
-                            <a className="text-blue-500 font-bold hover:underline" href="#">
-                                Зарегистрироваться
-                            </a>
-                        </p>
+                        {/*<div className="mt-8 pt-8 border-t border-[#f0f2f4]">*/}
+                        {/*    <button*/}
+                        {/*        type="button"*/}
+                        {/*        onClick={() => navigate('/dashboard-manager')}*/}
+                        {/*        className="w-full h-12 flex items-center justify-center gap-3 bg-white border border-[#dbe0e6] rounded-lg text-[#111418] text-sm font-semibold hover:bg-gray-50 transition-colors"*/}
+                        {/*    >*/}
+                        {/*        <svg className="w-5 h-5" viewBox="0 0 24 24">*/}
+                        {/*            /!* Google Icon *!/*/}
+                        {/*        </svg>*/}
+                        {/*        Войти через Google*/}
+                        {/*    </button>*/}
+                        {/*</div>*/}
                         <div className="mt-12 flex justify-center gap-6 text-xs text-[#617289]">
-                            <a className="hover:text-blue-500 transition-colors" href="#">
-                                О продукте
-                            </a>
-                            <a className="hover:text-blue-500 transition-colors" href="#">
-                                Цены
-                            </a>
                             <a className="hover:text-blue-500 transition-colors" href="#">
                                 Помощь
                             </a>

@@ -1,55 +1,73 @@
-import type { ReactNode } from 'react';
-import PersonaLearnSidebar from './PersonaLearnSidebar';
-import Icon from '../components/Icon';
+import {type ReactNode, useEffect, useState} from 'react';
+import UserSidebar from './UserSidebar.tsx';
+import Icon from "../components/Icon.tsx";
+import {useNavigate} from "react-router-dom";
+import {getRoleFromToken} from "../services/getRoleFromToken.ts";
+import AdminSidebar from "./AdminSidebar.tsx";
+import api from "../api/axiosInstance.ts";
+import {toast, ToastContainer} from "react-toastify";
 
 interface PersonaLearnLayoutProps {
-  children: ReactNode;
-  title?: string;
-  showSearch?: boolean;
+    children: ReactNode;
+    title?: string;
+    showSearch?: boolean;
 }
 
-export default function PersonaLearnLayout({ 
-  children, 
-  title,
-  showSearch = false 
-}: PersonaLearnLayoutProps) {
-  return (
-    <div className="flex h-screen overflow-hidden bg-background-light font-display text-slate-900">
-      <PersonaLearnSidebar />
-      <main className="flex-1 flex flex-col overflow-y-auto bg-slate-50/50">
-        {title && (
-          <header className="h-16 border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-10 px-8 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <h2 className="text-lg font-bold">{title}</h2>
-            </div>
-            {showSearch && (
-              <div className="flex items-center gap-5">
-                <div className="relative group">
-                  <Icon
-                    name="search"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg group-focus-within:text-blue-500 transition-colors"
-                  />
-                  <input
-                    className="bg-slate-100/80 border-transparent rounded-lg pl-10 pr-4 py-1.5 text-sm w-64 focus:ring-1 focus:ring-blue-500 focus:bg-white transition-all"
-                    placeholder="Поиск по сотрудникам..."
-                    type="text"
-                  />
-                </div>
-                <div className="flex items-center gap-2">
-                  <button className="size-9 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 transition-colors relative">
-                    <Icon name="notifications" className="text-[22px]" />
-                    <span className="absolute top-2 right-2.5 size-2 bg-red-500 rounded-full border-2 border-white"></span>
-                  </button>
-                  <button className="size-9 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 transition-colors">
-                    <Icon name="help_outline" className="text-[22px]" />
-                  </button>
-                </div>
-              </div>
-            )}
-          </header>
-        )}
-        <div className="p-8 space-y-8">{children}</div>
-      </main>
-    </div>
-  );
+export interface User {
+    firstName: string;
+    lastName: string;
+    email: string;
+}
+
+export default function PersonaLearnLayout({
+                                               children,
+                                           }: PersonaLearnLayoutProps) {
+    const navigate = useNavigate();
+    const role = getRoleFromToken();
+    const roleLabel = role === 'client_admin'
+      ? 'Руководитель'
+      : role === 'client_user'
+        ? 'Сотрудник'
+        : 'Пользователь';
+
+    const [user, setUser] = useState<User>();
+
+    useEffect(() => {
+        api.get("/auth/me").then((res) => setUser(res.data)).catch((err) => toast.error("Failed to fetch user data", err.message));
+    },[])
+
+    return (
+        <div className="flex h-screen overflow-hidden bg-background-light font-display text-slate-900">
+            {role==="client_admin" ? <AdminSidebar /> : <UserSidebar />}
+            <ToastContainer position="top-right" autoClose={3000} />
+            <main className="flex-1 flex flex-col overflow-y-auto bg-slate-50/50">
+                <header
+                    className="h-16 border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-10 ps-8 pe-4 flex items-center justify-between">
+                    <div></div>
+                    <div className="flex">
+                        <div className="flex items-center gap-3 p-2">
+                    <span className={"flex gap-3 cursor-pointer"} onClick={() => navigate("/setting")}>
+                        <div
+                            className="size-9 rounded-full bg-slate-200 bg-cover bg-center border border-slate-200 shadow-sm"
+                            style={{
+                                backgroundImage:
+                                    "url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9_gI4z1AeI_SeVngeRHxh2ncUZtPfPr09J0CYW2S3Ym0XbD6GWaTM6oB2GuOAeSg3kLD-ZCehpHk_4iiAAnnRR3jQeZjW88-GVKEM_9VfYJAnzFxREnYY9HXZbfyO5wJmfjm5anGLGGei590ay58H-rEIRtx7KEyz8C92s__leWLbOWvcCe6kq3s0r90PjIP0VzQOcVOd3luF1iuPRSbkYa-W-lKUQhHyhcHm7k4Zs-GBTem2NPi-ZWJe_tidHpxaxtQZCRh79zQ')",
+                            }}
+                        ></div>
+                        <div className="flex-1 min-w-0">
+                            <p className="text-sm font-semibold truncate">{user?.firstName} {user?.lastName[0]}.</p>
+                            <p className="text-[11px] text-slate-500 truncate font-medium">{roleLabel}</p>
+                        </div>
+                    </span>
+                            <button className="text-slate-400 hover:text-slate-600 transition-colors"
+                                    onClick={() => navigate("/login")}>
+                                <Icon name="logout" className="text-lg"/>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+                <div className="space-y-8">{children}</div>
+            </main>
+        </div>
+    );
 }

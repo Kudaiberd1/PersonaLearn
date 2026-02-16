@@ -5,10 +5,10 @@ import MasteryChart from '../components/MasteryChart';
 import QuickActionCard from '../components/QuickActionCard';
 import dashboardData from '../data/dashboard2.json';
 
-export default function DashboardManager2() {
+export default function DashboardManager() {
   return (
-    <PersonaLearnLayout title="Главная / Обзор платформы PersonaLearn" showSearch={true}>
-      <div className="space-y-8">
+    <PersonaLearnLayout>
+      <div className="space-y-8 m-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {dashboardData.kpis.map((kpi, index) => (
             <KPICard

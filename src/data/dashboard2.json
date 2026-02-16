@@ -35,20 +35,60 @@
     }
   ],
   "progressData": [
-    { "name": "Иван", "percentage": 85, "isActive": true },
-    { "name": "Анна", "percentage": 45, "isActive": false },
-    { "name": "Петр", "percentage": 70, "isActive": true },
-    { "name": "Ольга", "percentage": 35, "isActive": false },
-    { "name": "Макс", "percentage": 55, "isActive": false },
-    { "name": "Елена", "percentage": 40, "isActive": false },
-    { "name": "Юрий", "percentage": 90, "isActive": true }
+    {
+      "name": "Иван",
+      "percentage": 85,
+      "isActive": true
+    },
+    {
+      "name": "Анна",
+      "percentage": 45,
+      "isActive": false
+    },
+    {
+      "name": "Петр",
+      "percentage": 70,
+      "isActive": true
+    },
+    {
+      "name": "Ольга",
+      "percentage": 35,
+      "isActive": false
+    },
+    {
+      "name": "Макс",
+      "percentage": 55,
+      "isActive": false
+    },
+    {
+      "name": "Елена",
+      "percentage": 40,
+      "isActive": false
+    },
+    {
+      "name": "Юрий",
+      "percentage": 90,
+      "isActive": true
+    }
   ],
   "masteryData": {
     "totalPercentage": 92,
     "categories": [
-      { "name": "Скрипты продаж", "percentage": 75, "color": "blue" },
-      { "name": "Продукт", "percentage": 20, "color": "emerald" },
-      { "name": "B2B Лояльность", "percentage": 5, "color": "orange" }
+      {
+        "name": "Скрипты продаж",
+        "percentage": 75,
+        "color": "blue"
+      },
+      {
+        "name": "Продукт",
+        "percentage": 20,
+        "color": "emerald"
+      },
+      {
+        "name": "B2B Лояльность",
+        "percentage": 5,
+        "color": "orange"
+      }
     ]
   },
   "quickActions": [
