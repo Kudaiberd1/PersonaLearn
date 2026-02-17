@@ -1,11 +1,11 @@
-import {type ReactNode, useEffect, useState} from 'react';
+import {type ReactNode, useState} from 'react';
 import UserSidebar from './UserSidebar.tsx';
 import Icon from "../components/Icon.tsx";
 import {useNavigate} from "react-router-dom";
 import {getRoleFromToken} from "../services/getRoleFromToken.ts";
 import AdminSidebar from "./AdminSidebar.tsx";
-import api from "../api/axiosInstance.ts";
-import {toast, ToastContainer} from "react-toastify";
+import {ToastContainer} from "react-toastify";
+import {getUserDetails} from "../services/getUserDetails.ts";
 
 interface PersonaLearnLayoutProps {
     children: ReactNode;
@@ -30,11 +30,8 @@ export default function PersonaLearnLayout({
         ? 'Сотрудник'
         : 'Пользователь';
 
-    const [user, setUser] = useState<User>();
+    const [user] = useState<User | null>(() => getUserDetails());
 
-    useEffect(() => {
-        api.get("/auth/me").then((res) => setUser(res.data)).catch((err) => toast.error("Failed to fetch user data", err.message));
-    },[])
 
     return (
         <div className="flex h-screen overflow-hidden bg-background-light font-display text-slate-900">

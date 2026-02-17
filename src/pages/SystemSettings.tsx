@@ -1,20 +1,13 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import PersonaLearnLayout, {type User} from '../layouts/PersonaLearnLayout';
 import Icon from '../components/Icon';
 import Button from '../components/Button';
-import api from "../api/axiosInstance.ts";
-import {toast} from "react-toastify";
+import {getUserDetails} from "../services/getUserDetails.ts";
 
 export default function SystemSettings() {
 
-    const [profileData, setProfileData] = useState<User>();
+    const [profileData] = useState<User | null>(() => getUserDetails());
 
-    useEffect(() => {
-        api
-          .get('/auth/me')
-          .then((res) => setProfileData(res.data))
-          .catch((err) => toast.error(`Failed to fetch user data: ${err?.message ?? 'Unknown error'}`));
-    },[])
 
     return (
         <PersonaLearnLayout title="Настройки системы">
