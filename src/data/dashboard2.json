@@ -10,7 +10,7 @@
     },
     {
       "icon": "school",
-      "label": "Процент обучения",
+      "label": "Процент пройденного материала",
       "value": "78%",
       "change": "+5%",
       "changeType": "positive",
@@ -18,20 +18,12 @@
     },
     {
       "icon": "verified",
-      "label": "Среднее мастерство",
+      "label": "Средняя оценка",
       "value": "4.2",
       "valueSuffix": "/ 5",
       "change": "+0.3",
       "changeType": "positive",
       "iconBgColor": "amber"
-    },
-    {
-      "icon": "forum",
-      "label": "AI диалоги",
-      "value": "1,542",
-      "change": "-2%",
-      "changeType": "negative",
-      "iconBgColor": "purple"
     }
   ],
   "progressData": [

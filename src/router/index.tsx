@@ -10,6 +10,7 @@ import AIHelper from "../pages/AIHelper.tsx";
 import ProtectedRoute from "./ProtectedRoute.tsx";
 import NotFound from "../pages/NotFound.tsx";
 import AccessDenied from "../pages/AccessDenied.tsx";
+import EmployeeProfile from "../pages/EmployeeProfile.tsx";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
         element: (
             <ProtectedRoute allow={["client_admin"]}>
                 <EmployeeList/>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/employee/:id',
+        element: (
+            <ProtectedRoute allow={["client_admin"]}>
+                <EmployeeProfile/>
             </ProtectedRoute>
         ),
     },

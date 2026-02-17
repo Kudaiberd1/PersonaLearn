@@ -2,8 +2,10 @@ import PersonaLearnLayout from '../layouts/PersonaLearnLayout';
 import Icon from '../components/Icon';
 import Button from '../components/Button';
 import employeesData from '../data/employees2.json';
+import { useNavigate } from 'react-router-dom';
 
 export default function EmployeeList() {
+    const navigate = useNavigate();
     const getAvatarColor = (color: string) => {
         const colors: Record<string, string> = {
             blue: 'bg-blue-100 text-blue-600',
@@ -150,20 +152,11 @@ export default function EmployeeList() {
                                     </div>
                                 </td>
                                 <td className="px-8 py-5 text-right">
-                                    <div className="flex justify-end gap-2">
-                                        <button
-                                            className="px-3 py-1.5 text-xs font-bold text-blue-500 hover:bg-blue-500/5 rounded-lg transition-colors">
-                                            Назначить
-                                        </button>
-                                        <button
-                                            className="size-8 flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-all">
-                                            <Icon name="bar_chart" className="text-xl"/>
-                                        </button>
-                                        <button
-                                            className="size-8 flex items-center justify-center text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all">
-                                            <Icon name="more_vert" className="text-xl"/>
-                                        </button>
-                                    </div>
+                                    <button
+                                        onClick={() => navigate(`/employee/${employee.id}`)}
+                                        className="px-3 py-1.5 text-xs font-bold text-blue-500 hover:bg-blue-500/5 rounded-lg transition-colors">
+                                        Подробнее
+                                    </button>
                                 </td>
                             </tr>
                         ))}
