@@ -7,14 +7,14 @@ import {toast, ToastContainer} from "react-toastify";
 
 export default function Login() {
     const [showPassword, setShowPassword] = useState(false);
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try{
-            const token = await LoginApi(email, password);
+            const token = await LoginApi(username, password);
             localStorage.setItem("accessToken", JSON.stringify(token));
             navigate('/');
         }catch (err){
@@ -93,14 +93,14 @@ export default function Login() {
                             <div>
                                 <label className="flex flex-col">
                   <span className="text-[#111418] text-sm font-semibold leading-normal pb-2">
-                    Электронная почта
+                    Имя пользователя
                   </span>
                                     <input
                                         className="form-input flex w-full rounded-lg text-[#111418] focus:outline-0 focus:ring-2 focus:ring-blue-500/50 border border-[#dbe0e6] bg-white h-14 placeholder:text-[#617289] px-4 text-base font-normal transition-all"
-                                        placeholder="example@company.ru"
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="username"
+                                        type="text"
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
                                         required
                                     />
                                 </label>

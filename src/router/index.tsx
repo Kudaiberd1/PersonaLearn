@@ -82,6 +82,8 @@ const router = createBrowserRouter([
         path: '*',
         element: <NotFound/>,
     },
-]);
+], {
+    basename: '/persona-learn',
+});
 
 export default router;
